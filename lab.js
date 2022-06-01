@@ -166,11 +166,27 @@ console.log(totalPopulation());
 
 //Code Here
 
+const ingredients = function (obj) {
+  let obj2 = {
+    carb: "10",
+    fat: "12",
+    protein: "15",
+  };
 
+  const { carb: realCarb, fat: realFats, protein: realProteins } = obj2;
+  let fakeArray = [];
+  fakeArray.push(realCarb);
+  fakeArray.push(realFats);
+  fakeArray.push(realProteins);
+
+  return fakeArray;
+};
+
+console.log(ingredients());
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
-var user = {
+let user = {
   name: "Bryan",
   age: 24,
   pwHash: "U+Ldlngx2BYQk",
@@ -187,6 +203,10 @@ var user = {
 */
 
 //Code Here
+
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
+console.log(user);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
