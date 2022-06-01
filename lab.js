@@ -371,7 +371,7 @@ const colors = {
 
 //Code Here
 
-const colorsCopy = {...colors}
+const colorsCopy = { ...colors };
 console.log(colorsCopy);
 
 /*
@@ -379,8 +379,6 @@ console.log(colorsCopy);
  Call the new variable helensInfo. 
  When they combine, none of the properties should be repeated.
 */
-
-
 
 //do not edit the objects below
 const contactInfo = {
@@ -402,7 +400,7 @@ const shippingInfo = {
 
 //Code Here
 
-const helensInfo = {...contactInfo, ...shippingInfo}
+const helensInfo = { ...contactInfo, ...shippingInfo };
 console.log(helensInfo);
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
@@ -428,7 +426,7 @@ class Vehicle {
     this.mileage = mileage;
   }
   move(miles) {
-    miles += this.mileage;
+    this.mileage += miles;
     console.log(this.mileage);
   }
 }
@@ -530,7 +528,14 @@ class Boat extends Vehicle {
 
 //Code Here
 
-let malibu = new Boat(12, "Perfect Yellow", 500, "Wake Setter", "Wake Boat", false);
+let malibu = new Boat(
+  12,
+  "Perfect Yellow",
+  500,
+  "Wake Setter",
+  "Wake Boat",
+  false
+);
 
 /*
   Call the checkSeaworthiness method on your new boat
