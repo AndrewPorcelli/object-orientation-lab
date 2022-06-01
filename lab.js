@@ -204,8 +204,8 @@ let user = {
 
 //Code Here
 
-user.name = 'Bryan G. Smith'
-user.email = 'bryan.smith@devmounta.in'
+user.name = "Bryan G. Smith";
+user.email = "bryan.smith@devmounta.in";
 console.log(user);
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -215,7 +215,7 @@ console.log(user);
 
 //Code Here
 
-delete user.age
+delete user.age;
 console.log(user);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -228,15 +228,14 @@ console.log(user);
 //Code here
 
 class Cat {
-  constructor (name, age, color) {
-    this.name = name
-    this.age = age
-    this.color = color
-
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
   }
 }
 
-let cat1 = new Cat ('Taqi', 3, 'gray')
+let cat1 = new Cat("Taqi", 3, "gray");
 console.log(cat1);
 console.log(cat1.name);
 
@@ -249,6 +248,23 @@ console.log(cat1.name);
 */
 
 //Code here
+
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+
+  castSpell () {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  }
+}
+
+let wizard1 = new Wizard ('Harry', 30, 'Leviosa')
+
+console.log(wizard1);
+wizard1.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
