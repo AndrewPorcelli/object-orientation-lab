@@ -256,15 +256,15 @@ class Wizard {
     this.favoriteSpell = favoriteSpell;
   }
 
-  castSpell () {
+  castSpell() {
     console.log(`${this.name} has cast ${this.favoriteSpell}`);
   }
 }
 
-let wizard1 = new Wizard ('Harry', 30, 'Leviosa')
+let wizard1 = new Wizard("Harry", 30, "Leviosa");
 
 console.log(wizard1);
-wizard1.castSpell()
+wizard1.castSpell();
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -291,6 +291,26 @@ wizard1.castSpell()
 
 //Code Here
 
+class Phone {
+  sold = false;
+  constructor(brand, model, storage, color, price) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+  }
+
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold`);
+  }
+
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -303,6 +323,10 @@ wizard1.castSpell()
 
 //Code Here
 
+let iPhone = new Phone("Apple", "iPhone XS", 128, "Black", 1000);
+let samsung = new Phone("Samsung", "Galaxy", 256, "Blue", 1200);
+let windows = new Phone("Microsoft", "Windows Bad", 1, "Gold", 10);
+
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -312,6 +336,9 @@ wizard1.castSpell()
 
 //Code Here
 
+iPhone.changePrice(800);
+console.log(iPhone);
+
 /*
   Now call the sell method on one of your other phone objects
 
@@ -319,6 +346,11 @@ wizard1.castSpell()
 */
 
 //Code Here
+
+windows.sell(); // haha yeah right
+console.log(windows);
+samsung.sell();
+console.log(samsung);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -380,11 +412,25 @@ const shippingInfo = {
 
 //Code Here
 
+class Vehicle {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles) {
+    miles += this.mileage;
+    console.log(this.mileage);
+  }
+}
+
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
+
+let firstVehicle = new Vehicle(7, "Blue", 20000);
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -396,15 +442,33 @@ const shippingInfo = {
 
 //Code Here
 
+class Motocycle extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool) {
+    super(capacity, color, mileage);
+    this.make = make;
+    this.isCool = isCool;
+  }
+
+  move(miles) {
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+}
+
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here
 
+let myFirstMotorcycle = new Motocycle(1, "Black", 1500, "Kawasaki", true);
+
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+console.log(myFirstMotorcycle);
+myFirstMotorcycle.move(250);
 
 /*
   Let's make another class based off of Vehicle. 
@@ -424,6 +488,32 @@ const shippingInfo = {
 
 //Code Here
 
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaworthy) {
+    super(capacity, color, mileage);
+    this.name = name;
+    this.type = type;
+    this.isSeaworthy = isSeaworthy;
+  }
+
+  checkSeaworthiness() {
+    if (this.isSeaworthy) {
+      console.log(`The ${this.color} ${this.type} is seaworthy!`);
+    } else {
+      console.log(`You need to get your ${this.type} in shape`);
+    }
+  }
+
+  move(miles) {
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+
+  performMaintenance() {
+    this.isSeaworthy = true;
+  }
+}
+
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
@@ -431,20 +521,27 @@ const shippingInfo = {
 
 //Code Here
 
+let malibu = new Boat(12, "Perfect Yellow", 500, "Wake Setter", "Wake Boat", false);
+
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
 
+malibu.checkSeaworthiness();
+
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here
+malibu.performMaintenance();
 
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+
+malibu.checkSeaworthiness();
