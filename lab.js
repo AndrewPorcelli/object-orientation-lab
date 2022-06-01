@@ -215,6 +215,9 @@ console.log(user);
 
 //Code Here
 
+delete user.age
+console.log(user);
+
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -223,6 +226,19 @@ console.log(user);
 */
 
 //Code here
+
+class Cat {
+  constructor (name, age, color) {
+    this.name = name
+    this.age = age
+    this.color = color
+
+  }
+}
+
+let cat1 = new Cat ('Taqi', 3, 'gray')
+console.log(cat1);
+console.log(cat1.name);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
